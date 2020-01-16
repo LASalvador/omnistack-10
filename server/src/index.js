@@ -15,3 +15,5 @@ app.use(routes);
 
 app.listen(3000, () => console.log('server listen'));
 
+// parei em 54 min
+
