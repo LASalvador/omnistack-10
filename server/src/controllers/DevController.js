@@ -1,5 +1,7 @@
 const axios = require('axios');
 const Dev = require('../models/Dev');
+const string2Array = require('../services/stringToArray');
+
 async function store(req, res) {
     const { github_username, techs, latitude, longitude } = req.body;
 
@@ -9,7 +11,7 @@ async function store(req, res) {
         const apiResponse = await axios.get(`https://api.github.com/users/${github_username}`);
 
         const { name = login, avatar_url, bio } = apiResponse.data;
-        const techsArray = techs.split(",").map(tech => tech.trim());
+        const techsArray = string2Array(techs, ',');
 
         const location = {
             type: 'Point',
