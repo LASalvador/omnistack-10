@@ -2,6 +2,7 @@ import React from 'react';
 import './global.css'
 import './app.css'
 import './sidebar.css'
+import './main.css'
 
 function App() {
   return (
